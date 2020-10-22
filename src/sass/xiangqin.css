@@ -1,0 +1,264 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.con {
+  width: 1228px;
+  margin: 0 auto;
+}
+
+.head {
+  background-image: url(../images/index01.jpg);
+  height: 120px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50%;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+.naw {
+  height: 40px;
+  background-color: #333333;
+  font-size: 12px;
+  color: #b0b0b0;
+}
+
+.naw-con {
+  height: 40px;
+  background-color: #333333;
+  font-size: 12px;
+  color: #b0b0b0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.naw-con ul, .naw-con ol {
+  list-style: none;
+  display: flex;
+}
+
+.naw-con ul {
+  width: 774px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.naw-con ol {
+  align-items: center;
+  width: 276px;
+  justify-content: space-between;
+}
+
+.naw-con ul li {
+  border-right: 1px solid #3e3934;
+  padding-right: 8px;
+}
+
+.naw-con ol li {
+  border-right: 1px solid #3e3934;
+  padding-right: 8px;
+}
+
+.naw-con ol li:nth-child(4) {
+  width: 120px;
+  background-color: #424242;
+  text-align: center;
+  height: 40px;
+  line-height: 40px;
+}
+
+.naw-con ul li:hover, .naw-con ol li:hover {
+  color: #fff;
+}
+
+.naw-con ol li:nth-child(4):hover {
+  color: #fe6b01;
+  height: 40px;
+  line-height: 40px;
+}
+
+.shop {
+  background-color: #fff;
+}
+
+.shop .shop-top {
+  height: 110px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.shop .shop-top > img {
+  margin-right: 50px;
+  height: 49px;
+}
+
+.shop .shop-top ul {
+  width: 594px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+}
+
+.shop .shop-top ul li a {
+  text-decoration: none;
+  color: #333333;
+  font-size: 16px;
+  display: block;
+}
+
+.shop .shop-top ul li a:hover {
+  text-decoration: none;
+  color: #fe4f3a;
+  font-size: 16px;
+}
+
+.shop .shop-top .text {
+  width: 242px;
+  height: 48px;
+  outline-style: none;
+  border: 1px solid #e0e0e0;
+  float: left;
+}
+
+.shop .shop-top .btn {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #e0e0e0;
+  outline-style: none;
+  border-left: none;
+  background-color: #fff;
+  float: left;
+}
+
+.show {
+  display: none;
+  background-color: #fff;
+  width: 100%;
+  height: 229px;
+  border-top: 1px solid #b0b0b0;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.18);
+  position: absolute;
+  top: 300px;
+  z-index: 44;
+}
+
+.show .show-con {
+  list-style: none;
+  height: 230px;
+}
+
+.show .show-con li {
+  width: 186px;
+  height: 166px;
+  padding: 35px 12px 12px 0;
+  float: left;
+  text-align: center;
+  background-color: #fff;
+}
+
+.show .show-con li span {
+  color: #fe4f3a;
+}
+
+.chanpin {
+  height: 59px;
+  border-top: 1px solid #b0b0b0;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.18);
+}
+
+.chanpin .chanpin-con {
+  height: 59px;
+}
+
+.chanpin .chanpin-con h2 {
+  float: left;
+  line-height: 59px;
+}
+
+.chanpin .chanpin-con > a {
+  color: #333333;
+  float: left;
+  font-size: 12px;
+  border-left: 1px solid #e0e0e0;
+  padding-left: 6px;
+  margin-left: 6px;
+  margin-top: 20px;
+  text-decoration: none;
+}
+
+.chanpin .chanpin-con > a:hover {
+  color: #fe4f3a;
+}
+
+.chanpin .chanpin-con .chanpin-con-right {
+  float: right;
+  margin-top: 20px;
+}
+
+.chanpin .chanpin-con .chanpin-con-right a {
+  float: left;
+  color: #333333;
+  text-decoration: none;
+}
+
+.chanpin .chanpin-con .chanpin-con-right > a:hover {
+  color: #fe4f3a;
+}
+
+.chanpin .chanpin-con .chanpin-con-right span {
+  float: left;
+  margin: 0 7px;
+}
+
+.lunbo .lunbo-con {
+  margin-top: 20px;
+}
+
+.lunbo .lunbo-con .swiper-container {
+  width: 560px;
+  height: 566px;
+  float: left;
+}
+
+.lunbo .lunbo-con .swiper-container img {
+  width: 560px;
+  height: 560px;
+}
+
+.lunbo .lunbo-con .lunbo-con-right {
+  float: left;
+  width: 660px;
+}
+
+.lunbo .lunbo-con .lunbo-con-right h2 {
+  margin: 20px 0;
+}
+
+.lunbo .lunbo-con .dian {
+  margin: 50px 0 0 50px;
+  float: left;
+}
+
+.lunbo .lunbo-con .dian button {
+  border: none;
+  outline-style: none;
+  width: 200px;
+  height: 60px;
+  line-height: 60px;
+  background-color: #fe6b01;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 24px;
+  margin-left: 20px;
+}
+
+.lunbo .lunbo-con .dian ._id {
+  display: none;
+}

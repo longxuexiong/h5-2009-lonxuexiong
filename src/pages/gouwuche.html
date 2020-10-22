@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../sass/gouwu.css">
+</head>
+<body>
+    <div class="head">
+        <div class="head-con con">
+            <a href="./index01.html"><img src="../images/milogo.png" alt=""></a>
+            <p>我的购物车</p>
+        </div>
+    </div>
+    <!-- 头部完成 -->
+    <div class="min">
+        <div class="min-con con">
+            <div class="have con" >
+                <ul>
+                    <li><input type="radio"></li>
+                    <li>全选</li>
+                    <li>商品名称</li>
+                    <li>单价</li>
+                    <li>数量</li>
+                    <li>小计</li>
+                    <li>操作</li>
+                </ul>
+                <div class="have-show">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  -->
+    <div class="box">
+        <div class="err con">
+            <img src="../images/gowu01.png" alt="">
+            <h1>您还没有挑选产品</h1>
+        </div>
+    </div>
+</body>
+<script src="../lib/jquery.js"></script>
+<script>
+        // 一打开购物车页面,展示购物车里面的商品
+        showTbody();
+        function showTbody(){
+            $.ajax({
+                url:'http://127.0.0.1/interface/showlist.php',
+                success:function(res){
+                    if(res.code){
+                        var arr = res.data;
+                        if(res.data){
+                            //如果有商品,table显示,div隐藏
+                            $('.have').show();
+                            $('.err').hide();
+                            //在table里面展示商品信息
+                            $('.have-show').empty();
+                            $.each(arr,function(index,item){
+                                $('.have-show').append(`<ul id="${item.product_id}"> 
+                                    <li>${item.product_name}</li>
+                                    <li>
+                                        <img src="${item.product_img}" alt="">
+                                    </li>
+                                    <li>${item.product_price}</li>
+                                    <li>
+                                        <span class='add'>+</span>
+                                        <span>${item.product_num}</span>
+                                        <span class="jian">-</span>
+                                    </li>
+                                    <li class="del">删除</li>
+                                </ul>`)
+                            })
+                        }              
+                    }else{
+                        //如果没有商品,table隐藏,div显示
+                        $('.have').hide();
+                        $('.err').show();                       
+                    } 
+                },
+                dataType:'json',
+                cache:false
+            })
+        }
+
+        // 点击+增加一个商品数量,点击-减少一个商品数量
+        $('.have').click(function(e){
+            var target = e.target;
+            // target是一个dom节点
+            if((target.className=='add')||(target.className=='jian')){
+                // 点击+增加一个商品数量,点击-减少一个商品数量
+                $.ajax({
+                    url:'http://127.0.0.1/interface/updatewq.php',
+                    data:{
+                        type:target.className,
+                        id:$(target).parents('ul').attr('id')
+                    },
+                    success:function(res){
+                        if(res.code){
+                            showTbody()
+                        }
+                    },
+                    dataType:'json'
+                })
+
+            }else if(target.className=='del'){
+                // 点击删除按钮删除一个商品
+                $.ajax({
+                    url:'http://127.0.0.1/interface/delwq.php',
+                    data:{
+                        id:$(target).parents('ul').attr('id')
+                    },
+                    success:function(res){
+                        if(res.code){
+                            showTbody()
+                        }
+                    },
+                    dataType:'json'
+                })
+            }
+        })
+    </script>
+</html>
